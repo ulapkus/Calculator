@@ -1,27 +1,81 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  padding: 0;
+  margin: 0;
+}
+
+#container {
+  background-color: beige;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 310px;
+  height: 540px;
+  background-color: #404f44;
+  border: 5px solid black;
+  border-radius: 25px;
+  box-shadow: 5px 5px #272b28;
+  padding: 12px 12px 2px 12px;
+}
+
+#button-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 5px;
+  width: 100%;
+  height: 400px;
+  padding-right: 4px;
+}
+
+.button {
+  width: 23%;
+  height: 18%;
+  background-color: #7b8a7f;
+  font-size: 25px;
+  border-radius: 10px;
+  border: solid black;
+  box-shadow: 4px 4px #272b28;
+  font-family: monospace;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.button:active {
+  box-shadow: none;
+  transform: translateY(2px);
+}
+
+#display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 80px;
+  background-color: #b5ae93;
+  text-align: left;
+  font-size: 35px;
+  border: 4px solid black;
+  border-radius: 20px;
+  font-family: monospace;
+  padding-left: 10px;
+}
+
+#zero,
+#clear,
+#equals {
+  width: 48.5%;
+  height: 18%;
 }
